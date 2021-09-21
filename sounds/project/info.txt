@@ -1,0 +1,7 @@
+Requires at least FL Studio 20.8
+Decided to include early versions because why not? Serves as a backup for me and a curiosity for those interested
+
+Required plugins:
+Serum (at least 1.107)
+OTT
+You don't need to care about missing B4 II, it's unused
