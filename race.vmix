@@ -1,0 +1,422 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	dsp_presets = [  ]
+	dsp_preview = null
+	Graphs = 
+	[
+		{
+			m_nGraphOutputChannels = -1
+			Name = "main"
+			m_nNodesCreated = 
+			[
+				0, 0, 1, 1,
+				0, 0, 1, 0,
+				0, 0, 0, 0,
+				0, 0, 0, 0,
+				0, 0, 0, 0,
+				0, 0, 0, 0,
+				0, 0,
+			]
+			m_EditorNodes = 
+			[
+				{
+					name = "audio.Track1"
+					friendlyname = "Main"
+					type = "audio.Track"
+					editor_pos = [ 169.0, 159.0 ]
+					editor_size = [ 0.0, 0.0 ]
+					properties = 
+					{
+						_class = "CMixSubmixTrack"
+						m_Comment = ""
+						m_trackName = "Main"
+						m_nChannels = -1
+						m_nMixDownRule = 0
+						m_sendOperator = "SendAllVoices"
+						m_Send1 = ""
+						m_Send2 = ""
+						m_Send3 = ""
+						m_Send4 = ""
+					}
+				},
+				{
+					name = "audio.Mix1"
+					friendlyname = "audio.Mix1"
+					type = "audio.Mix"
+					editor_pos = [ 400.0, 160.0 ]
+					editor_size = [ 140.0, 300.0 ]
+					properties = 
+					{
+						_class = "CMixSum"
+						m_Comment = ""
+						m_name = "audio.Mix1"
+						m_flVolume1 = 1.0
+						m_flVolume2 = 1.0
+						m_flVolume3 = 1.0
+						m_flVolume4 = 1.0
+						m_flVolume5 = 1.0
+						m_flVolume6 = 1.0
+						m_flVolume7 = 1.0
+						m_flVolume8 = 1.0
+					}
+				},
+				{
+					name = "audio.Output1"
+					friendlyname = "audio.Output1"
+					type = "audio.Output"
+					editor_pos = [ 616.0, 160.0 ]
+					editor_size = [ 140.0, 120.0 ]
+					properties = 
+					{
+						_class = "CMixOutput"
+						m_Comment = ""
+						m_name = "audio.Output1"
+						m_flVolume1 = 1.0
+						m_flVolume2 = 1.0
+						m_sendTo = ""
+					}
+				},
+			]
+			m_EditorEdges = 
+			[
+				{
+					plug0 = "audio.Track1/audio:Source"
+					plug1 = "audio.Mix1/audio:In1"
+				},
+				{
+					plug0 = "audio.Mix1/audio:Out"
+					plug1 = "audio.Output1/audio:In1"
+				},
+			]
+			m_EditorState = 
+			{
+				XAxis = 
+				{
+					pos = 0.0
+					min = -100000.0
+					max = 98823.0
+					scale = 1.0
+				}
+				YAxis = 
+				{
+					pos = 0.0
+					min = -100000.0
+					max = 99399.0
+					scale = 1.0
+				}
+			}
+			m_Submixes = 
+			[
+				{
+					name = "Main"
+					sendOperator = "SendAllVoices"
+					soloname = 4275089042
+					channels = -1
+					mixDownRule = 0
+				},
+			]
+			m_MixCommands = 
+			[
+				{
+					command = "submix.debug"
+					paramName = -19878254
+					outputSubmix = -1
+					inputSubmix0 = 0
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = -1
+					inputValue1 = -1
+				},
+				{
+					command = "submix.meter"
+					paramName = 0
+					outputSubmix = -1
+					inputSubmix0 = 0
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = 0
+					inputValue1 = -1
+				},
+				{
+					command = "submix.meter"
+					paramName = 0
+					outputSubmix = -1
+					inputSubmix0 = 0
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = 1
+					inputValue1 = -1
+				},
+				{
+					command = "submix.debug"
+					paramName = 1132046981
+					outputSubmix = -1
+					inputSubmix0 = 0
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = -1
+					inputValue1 = -1
+				},
+				{
+					command = "submix.output"
+					paramName = 0
+					outputSubmix = -1
+					inputSubmix0 = 0
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = 1
+					inputValue1 = -1
+				},
+				{
+					command = "submix.meter"
+					paramName = 0
+					outputSubmix = -1
+					inputSubmix0 = 0
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = 2
+					inputValue1 = -1
+				},
+			]
+			m_values = [ 1.0, 1.0 ]
+			m_audioMeters = 
+			[
+				{
+					name = "Main"
+				},
+				{
+					name = "audio.Mix1"
+				},
+				{
+					name = "audio.Output1"
+				},
+			]
+		},
+		{
+			m_nGraphOutputChannels = -1
+			Name = "bgm"
+			m_nNodesCreated = 
+			[
+				0, 0, 0, 9,
+				0, 0, 0, 0,
+				0, 0, 0, 0,
+				0, 0, 0, 0,
+				0, 0, 0, 0,
+				0, 0, 0, 0,
+				0, 0,
+			]
+			m_EditorNodes = 
+			[
+				{
+					name = "audio.Track1"
+					friendlyname = "bass"
+					type = "audio.Track"
+					editor_pos = [ 268.0, 165.0 ]
+					editor_size = [ 0.0, 0.0 ]
+					properties = 
+					{
+						_class = "CMixTrack"
+						m_Comment = ""
+						m_trackName = "bass"
+						m_nChannels = -1
+						m_nMixDownRule = 0
+					}
+				},
+				{
+					name = "audio.Track2"
+					friendlyname = "bcArp_HiCo"
+					type = "audio.Track"
+					editor_pos = [ 264.0, 248.0 ]
+					editor_size = [ 140.0, 75.0 ]
+					properties = 
+					{
+						_class = "CMixTrack"
+						m_Comment = "What happened to the flanger\?\?\?"
+						m_trackName = "bcArp_HiCo"
+						m_nChannels = -1
+						m_nMixDownRule = 0
+					}
+				},
+				{
+					name = "audio.Track3"
+					friendlyname = "bcArp_LoCo"
+					type = "audio.Track"
+					editor_pos = [ 264.0, 328.0 ]
+					editor_size = [ 140.0, 75.0 ]
+					properties = 
+					{
+						_class = "CMixTrack"
+						m_Comment = ""
+						m_trackName = "bcArp_LoCo"
+						m_nChannels = -1
+						m_nMixDownRule = 0
+					}
+				},
+				{
+					name = "audio.Track4"
+					friendlyname = "chords"
+					type = "audio.Track"
+					editor_pos = [ 264.0, 408.0 ]
+					editor_size = [ 140.0, 75.0 ]
+					properties = 
+					{
+						_class = "CMixTrack"
+						m_Comment = ""
+						m_trackName = "chords"
+						m_nChannels = -1
+						m_nMixDownRule = 0
+					}
+				},
+				{
+					name = "audio.Track5"
+					friendlyname = "clap"
+					type = "audio.Track"
+					editor_pos = [ 264.0, 488.0 ]
+					editor_size = [ 140.0, 75.0 ]
+					properties = 
+					{
+						_class = "CMixTrack"
+						m_Comment = ""
+						m_trackName = "clap"
+						m_nChannels = -1
+						m_nMixDownRule = 0
+					}
+				},
+				{
+					name = "audio.Track6"
+					friendlyname = "hats"
+					type = "audio.Track"
+					editor_pos = [ 264.0, 568.0 ]
+					editor_size = [ 140.0, 75.0 ]
+					properties = 
+					{
+						_class = "CMixTrack"
+						m_Comment = ""
+						m_trackName = "hats"
+						m_nChannels = -1
+						m_nMixDownRule = 0
+					}
+				},
+				{
+					name = "audio.Track7"
+					friendlyname = "kick"
+					type = "audio.Track"
+					editor_pos = [ 264.0, 648.0 ]
+					editor_size = [ 140.0, 75.0 ]
+					properties = 
+					{
+						_class = "CMixTrack"
+						m_Comment = ""
+						m_trackName = "kick"
+						m_nChannels = -1
+						m_nMixDownRule = 0
+					}
+				},
+				{
+					name = "audio.Track8"
+					friendlyname = "syncArp_HiCo"
+					type = "audio.Track"
+					editor_pos = [ 264.0, 728.0 ]
+					editor_size = [ 140.0, 75.0 ]
+					properties = 
+					{
+						_class = "CMixTrack"
+						m_Comment = ""
+						m_trackName = "syncArp_HiCo"
+						m_nChannels = -1
+						m_nMixDownRule = 0
+					}
+				},
+				{
+					name = "audio.Track9"
+					friendlyname = "syncArp_LoCo"
+					type = "audio.Track"
+					editor_pos = [ 264.0, 808.0 ]
+					editor_size = [ 140.0, 75.0 ]
+					properties = 
+					{
+						_class = "CMixTrack"
+						m_Comment = ""
+						m_trackName = "syncArp_LoCo"
+						m_nChannels = -1
+						m_nMixDownRule = 0
+					}
+				},
+			]
+			m_EditorState = 
+			{
+				XAxis = 
+				{
+					pos = 0.0
+					min = -64187.0
+					max = 63436.0
+					scale = 0.644001
+				}
+				YAxis = 
+				{
+					pos = 0.0
+					min = -64458.0
+					max = 63741.0
+					scale = 0.644001
+				}
+			}
+			m_EditorPreview = 
+			{
+				volume = 1.0
+				mix = 1.0
+				voiceList = 
+				[
+					{
+						sound = "sounds/bass.vsnd"
+						track = "bass"
+						isEvent = false
+					},
+					{
+						sound = "sounds/bcarp_hico.vsnd"
+						track = "bcArp_HiCo"
+						isEvent = false
+					},
+					{
+						sound = "sounds/bcarp_loco.vsnd"
+						track = "bcArp_LoCo"
+						isEvent = false
+					},
+					{
+						sound = "sounds/chords.vsnd"
+						track = "chords"
+						isEvent = false
+					},
+					{
+						sound = "sounds/clap.vsnd"
+						track = "clap"
+						isEvent = false
+					},
+					{
+						sound = "sounds/hats.vsnd"
+						track = "hats"
+						isEvent = false
+					},
+					{
+						sound = "sounds/kick.vsnd"
+						track = "kick"
+						isEvent = false
+					},
+					{
+						sound = "sounds/syncarp_hico.vsnd"
+						track = "syncArp_HiCo"
+						isEvent = false
+					},
+					{
+						sound = "sounds/syncarp_loco.vsnd"
+						track = "syncArp_LoCo"
+						isEvent = false
+					},
+				]
+			}
+		},
+	]
+	Editor = 
+	{
+		SelectedGraph = 1
+	}
+}
