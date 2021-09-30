@@ -404,10 +404,10 @@
 			[
 				1, 1, 8, 10,
 				6, 0, 1, 0,
-				0, 1, 0, 1,
+				0, 1, 1, 2,
 				0, 0, 0, 0,
-				0, 0, 0, 0,
-				0, 0, 0, 0,
+				0, 2, 0, 0,
+				1, 0, 0, 0,
 				0, 0,
 			]
 			m_EditorNodes = 
@@ -506,7 +506,7 @@
 					name = "audio.Track7"
 					friendlyname = "kick"
 					type = "audio.Track"
-					editor_pos = [ 264.0, 648.0 ]
+					editor_pos = [ 808.0, 696.0 ]
 					editor_size = [ 140.0, 75.0 ]
 					properties = 
 					{
@@ -551,7 +551,7 @@
 					name = "audio.Output1"
 					friendlyname = "audio.Output1"
 					type = "audio.Output"
-					editor_pos = [ 1960.0, 544.0 ]
+					editor_pos = [ 2176.0, 544.0 ]
 					editor_size = [ 140.0, 120.0 ]
 					properties = 
 					{
@@ -567,14 +567,14 @@
 					name = "control.Input1"
 					friendlyname = "KickMute"
 					type = "control.Input"
-					editor_pos = [ -368.0, 392.0 ]
+					editor_pos = [ 800.0, 832.0 ]
 					editor_size = [ 140.0, 70.0 ]
 					properties = 
 					{
 						_class = "CMixControlInput"
 						m_Comment = ""
 						m_name = "KickMute"
-						m_flDefaultValue = 1.0
+						m_flDefaultValue = 0.0
 						m_flMinRange = 0.0
 						m_flMaxRange = 1.0
 						m_bUseDecibels = false
@@ -652,15 +652,15 @@
 					name = "audio.Mix1"
 					friendlyname = "ducking"
 					type = "audio.Mix"
-					editor_pos = [ 1488.0, 320.0 ]
+					editor_pos = [ 1096.0, 312.0 ]
 					editor_size = [ 140.0, 300.0 ]
 					properties = 
 					{
 						_class = "CMixSum"
 						m_Comment = ""
 						m_name = "ducking"
-						m_flVolume1 = 1.004327
-						m_flVolume2 = 1.004327
+						m_flVolume1 = 1.487647
+						m_flVolume2 = 0.974429
 						m_flVolume3 = 1.0
 						m_flVolume4 = 1.0
 						m_flVolume5 = 1.0
@@ -709,16 +709,16 @@
 					name = "audio.Mix3"
 					friendlyname = "Final Mixer"
 					type = "audio.Mix"
-					editor_pos = [ 1725.491089, 545.401245 ]
-					editor_size = [ 0.0, 0.0 ]
+					editor_pos = [ 1824.0, 544.0 ]
+					editor_size = [ 140.0, 300.0 ]
 					properties = 
 					{
 						_class = "CMixSum"
 						m_Comment = "1 is ducked stuff, 2 is non-ducked, 3 is kick"
 						m_name = "Final Mixer"
-						m_flVolume1 = 0.974429
-						m_flVolume2 = 1.004327
-						m_flVolume3 = 1.0
+						m_flVolume1 = 0.917276
+						m_flVolume2 = 0.0
+						m_flVolume3 = 0.0
 						m_flVolume4 = 1.0
 						m_flVolume5 = 1.0
 						m_flVolume6 = 1.0
@@ -839,7 +839,7 @@
 					name = "audio.Filter1"
 					friendlyname = "Ducking Muffle Filter"
 					type = "audio.Filter"
-					editor_pos = [ 1288.0, 320.0 ]
+					editor_pos = [ 896.0, 312.0 ]
 					editor_size = [ 140.0, 135.0 ]
 					properties = 
 					{
@@ -857,21 +857,112 @@
 					name = "audio.Mix8"
 					friendlyname = "non-arp ducking"
 					type = "audio.Mix"
-					editor_pos = [ 1104.0, 288.0 ]
+					editor_pos = [ 520.0, 272.0 ]
 					editor_size = [ 140.0, 300.0 ]
 					properties = 
 					{
 						_class = "CMixSum"
 						m_Comment = ""
 						m_name = "non-arp ducking"
-						m_flVolume1 = 1.0
+						m_flVolume1 = 1.004327
 						m_flVolume2 = 1.0
-						m_flVolume3 = 1.0
+						m_flVolume3 = 1.678804
 						m_flVolume4 = 1.0
 						m_flVolume5 = 1.0
 						m_flVolume6 = 1.0
 						m_flVolume7 = 1.0
 						m_flVolume8 = 1.0
+					}
+				},
+				{
+					name = "audio.Splitter2"
+					friendlyname = "audio.Splitter2"
+					type = "audio.Splitter"
+					editor_pos = [ 1240.0, 696.0 ]
+					editor_size = [ 140.0, 105.0 ]
+					properties = 
+					{
+						_class = "CMixSplitter"
+						m_Comment = ""
+						m_name = "audio.Splitter2"
+						m_flVolume1 = 1.0
+						m_flVolume2 = 1.0
+					}
+				},
+				{
+					name = "audio.Amp1"
+					friendlyname = "audio.Amp1"
+					type = "audio.Amp"
+					editor_pos = [ 992.0, 696.0 ]
+					editor_size = [ 140.0, 90.0 ]
+					properties = 
+					{
+						_class = "CMixAmp"
+						m_Comment = ""
+						m_name = "audio.Amp1"
+						m_flVolume = 1.0
+					}
+				},
+				{
+					name = "audio.Dynamics1"
+					friendlyname = "audio.Dynamics1"
+					type = "audio.Dynamics"
+					editor_pos = [ 1368.0, 424.0 ]
+					editor_size = [ 184.0, 135.0 ]
+					properties = 
+					{
+						_class = "CMixDynamics"
+						m_Comment = ""
+						m_name = "audio.Dynamics1"
+						m_nChannels = -1
+						m_fldbNoiseGateThreshold = -90.0
+						m_fldbGain = 0.0
+						m_fldbCompressionThreshold = -18.614582
+						m_fldbLimiterThreshold = 0.0
+						m_fldbKneeWidth = 0.0
+						m_flRatio = 7.905994
+						m_flLimiterRatio = 40.0
+						m_flAttackTime = 100.0
+						m_flReleaseTime = 200.0
+						m_flRMSTime = 218.181824
+					}
+				},
+				{
+					name = "audio.Amp2"
+					friendlyname = "audio.Amp2"
+					type = "audio.Amp"
+					editor_pos = [ 2008.0, 544.0 ]
+					editor_size = [ 140.0, 90.0 ]
+					properties = 
+					{
+						_class = "CMixAmp"
+						m_Comment = ""
+						m_name = "audio.Amp2"
+						m_flVolume = 1.004327
+					}
+				},
+				{
+					name = "audio.Delay1"
+					friendlyname = "audio.Delay1"
+					type = "audio.Delay"
+					editor_pos = [ 1616.0, 416.0 ]
+					editor_size = [ 140.0, 135.0 ]
+					properties = 
+					{
+						_class = "CMixDelay"
+						m_Comment = ""
+						m_name = "audio.Delay1"
+						m_nChannels = -1
+						m_flDelay = 0.0
+						m_fldbDirectGain = -24.0
+						m_fldbDelayGain = 0.0
+						m_fldbFeedbackGain = -60.0
+						m_flWidth = 0.0
+						m_bEnableFilter = false
+						m_filterType = "FILTER_LOWPASS"
+						m_flFrequency = 2000.0
+						m_flQ = 0.707
+						m_fldbGain = 0.0
 					}
 				},
 			]
@@ -938,16 +1029,16 @@
 					plug1 = "audio.Mix7/audio:In2"
 				},
 				{
-					plug0 = "audio.Mix3/audio:Out"
-					plug1 = "audio.Output1/audio:In1"
+					plug0 = "control.Input1/value"
+					plug1 = "audio.Amp1/volume"
 				},
 				{
 					plug0 = "audio.Track1/audio:Source"
 					plug1 = "audio.Mix8/audio:In1"
 				},
 				{
-					plug0 = "audio.Mix1/audio:Out"
-					plug1 = "audio.Mix3/audio:In1"
+					plug0 = "audio.Amp1/audio:Out"
+					plug1 = "audio.Splitter2/audio:In"
 				},
 				{
 					plug0 = "audio.Track4/audio:Source"
@@ -969,22 +1060,54 @@
 					plug0 = "audio.Mix5/audio:Out"
 					plug1 = "audio.Mix1/audio:In1"
 				},
+				{
+					plug0 = "audio.Track7/audio:Source"
+					plug1 = "audio.Amp1/audio:In"
+				},
+				{
+					plug0 = "audio.Mix1/audio:Out"
+					plug1 = "audio.Dynamics1/audio:In"
+				},
+				{
+					plug0 = "audio.Amp2/audio:Out"
+					plug1 = "audio.Output1/audio:In1"
+				},
+				{
+					plug0 = "audio.Splitter2/audio:Out1"
+					plug1 = "audio.Dynamics1/audio.SideChain"
+				},
+				{
+					plug0 = "audio.Splitter2/audio.Out2"
+					plug1 = "audio.Mix3/audio:In3"
+				},
+				{
+					plug0 = "audio.Mix3/audio:Out"
+					plug1 = "audio.Amp2/audio:In"
+				},
+				{
+					plug0 = "audio.Dynamics1/audio:Out"
+					plug1 = "audio.Delay1/audio:In"
+				},
+				{
+					plug0 = "audio.Delay1/audio:Out"
+					plug1 = "audio.Mix3/audio:In1"
+				},
 			]
 			m_EditorState = 
 			{
 				XAxis = 
 				{
 					pos = 0.0
-					min = -28914.0
-					max = 28278.0
-					scale = 0.291831
+					min = -58022.0
+					max = 56026.0
+					scale = 0.576116
 				}
 				YAxis = 
 				{
 					pos = 0.0
-					min = -28990.0
-					max = 28797.0
-					scale = 0.291831
+					min = -57751.0
+					max = 56893.0
+					scale = 0.576116
 				}
 			}
 			m_Submixes = 
@@ -1039,6 +1162,13 @@
 					mixDownRule = 0
 				},
 				{
+					name = "kick"
+					sendOperator = ""
+					soloname = 2189723422
+					channels = -1
+					mixDownRule = 0
+				},
+				{
 					name = "clap"
 					sendOperator = ""
 					soloname = 3355779433
@@ -1049,6 +1179,13 @@
 					name = "ride"
 					sendOperator = ""
 					soloname = 2072008610
+					channels = -1
+					mixDownRule = 0
+				},
+				{
+					name = "audio.Splitter2"
+					sendOperator = "SendNone"
+					soloname = 1948269856
 					channels = -1
 					mixDownRule = 0
 				},
@@ -1071,12 +1208,62 @@
 						m_flQ = 0.707
 					}
 				},
+				{
+					m_name = "audio.Dynamics1"
+					m_effectName = ""
+					m_nProcessorType = "VPROCESSOR_DYNAMICS"
+					m_bAffectsGlobals = false
+					m_nChannels = -1
+					m_flxfade = 0.1
+					m_params = 
+					{
+						m_fldbGain = 0.0
+						m_fldbNoiseGateThreshold = -90.0
+						m_fldbCompressionThreshold = -18.614582
+						m_fldbLimiterThreshold = 0.0
+						m_fldbKneeWidth = 0.0
+						m_flRatio = 7.905994
+						m_flLimiterRatio = 40.0
+						m_flAttackTimeMS = 100.0
+						m_flReleaseTimeMS = 200.0
+						m_flRMSTimeMS = 218.181824
+					}
+				},
+				{
+					m_name = "audio.Delay1"
+					m_effectName = ""
+					m_nProcessorType = "VPROCESSOR_DELAY"
+					m_bAffectsGlobals = false
+					m_nChannels = -1
+					m_flxfade = 0.1
+					m_params = 
+					{
+						m_feedbackFilter = 
+						{
+							m_nFilterType = "FILTER_LOWPASS"
+							m_bEnabled = false
+							m_fldbGain = 0.0
+							m_flCutoffFreq = 2000.0
+							m_flQ = 0.707
+						}
+						m_bEnableFilter = false
+						m_flDelay = 0.0
+						m_flDirectGain = -24.0
+						m_flDelayGain = 0.0
+						m_flFeedbackGain = -60.0
+						m_flWidth = 0.0
+					}
+				},
 			]
 			m_controlInputs = 
 			[
 				{
 					name = "Muffle"
 					value = 1.0
+				},
+				{
+					name = "KickMute"
+					value = 0.0
 				},
 			]
 			m_MixCommands = 
@@ -1223,7 +1410,7 @@
 				},
 				{
 					command = "submix.debug"
-					paramName = -939187863
+					paramName = -2105243874
 					outputSubmix = -1
 					inputSubmix0 = 7
 					inputSubmix1 = -1
@@ -1243,7 +1430,7 @@
 				},
 				{
 					command = "submix.debug"
-					paramName = 2072008610
+					paramName = -939187863
 					outputSubmix = -1
 					inputSubmix0 = 8
 					inputSubmix1 = -1
@@ -1259,6 +1446,26 @@
 					inputSubmix1 = -1
 					processor = -1
 					inputValue0 = 8
+					inputValue1 = -1
+				},
+				{
+					command = "submix.debug"
+					paramName = 2072008610
+					outputSubmix = -1
+					inputSubmix0 = 9
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = -1
+					inputValue1 = -1
+				},
+				{
+					command = "submix.meter"
+					paramName = 0
+					outputSubmix = -1
+					inputSubmix0 = 9
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = 9
 					inputValue1 = -1
 				},
 				{
@@ -1338,7 +1545,7 @@
 					inputSubmix0 = 0
 					inputSubmix1 = -1
 					processor = -1
-					inputValue0 = 9
+					inputValue0 = 10
 					inputValue1 = -1
 				},
 				{
@@ -1378,7 +1585,7 @@
 					inputSubmix0 = 0
 					inputSubmix1 = -1
 					processor = -1
-					inputValue0 = 10
+					inputValue0 = 11
 					inputValue1 = -1
 				},
 				{
@@ -1408,7 +1615,7 @@
 					inputSubmix0 = 2
 					inputSubmix1 = -1
 					processor = -1
-					inputValue0 = 11
+					inputValue0 = 12
 					inputValue1 = -1
 				},
 				{
@@ -1419,6 +1626,16 @@
 					inputSubmix1 = -1
 					processor = -1
 					inputValue0 = -1
+					inputValue1 = -1
+				},
+				{
+					command = "submix.copy"
+					paramName = 0
+					outputSubmix = 4
+					inputSubmix0 = 4
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = 12
 					inputValue1 = -1
 				},
 				{
@@ -1448,7 +1665,7 @@
 					inputSubmix0 = 4
 					inputSubmix1 = -1
 					processor = -1
-					inputValue0 = 12
+					inputValue0 = 13
 					inputValue1 = -1
 				},
 				{
@@ -1462,13 +1679,23 @@
 					inputValue1 = -1
 				},
 				{
+					command = "control.store"
+					paramName = 0
+					outputSubmix = -1
+					inputSubmix0 = -1
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = 15
+					inputValue1 = 1
+				},
+				{
 					command = "submix.copy"
 					paramName = 0
 					outputSubmix = 0
 					inputSubmix0 = 0
 					inputSubmix1 = -1
 					processor = -1
-					inputValue0 = 15
+					inputValue0 = 16
 					inputValue1 = -1
 				},
 				{
@@ -1478,7 +1705,7 @@
 					inputSubmix0 = 2
 					inputSubmix1 = -1
 					processor = -1
-					inputValue0 = 16
+					inputValue0 = 17
 					inputValue1 = -1
 				},
 				{
@@ -1488,7 +1715,7 @@
 					inputSubmix0 = 0
 					inputSubmix1 = -1
 					processor = -1
-					inputValue0 = 13
+					inputValue0 = 14
 					inputValue1 = -1
 				},
 				{
@@ -1544,51 +1771,21 @@
 				{
 					command = "submix.copy"
 					paramName = 0
-					outputSubmix = 0
-					inputSubmix0 = 0
+					outputSubmix = 7
+					inputSubmix0 = 7
 					inputSubmix1 = -1
 					processor = -1
-					inputValue0 = 17
-					inputValue1 = -1
-				},
-				{
-					command = "submix.accumulate_single"
-					paramName = 0
-					outputSubmix = 0
-					inputSubmix0 = 4
-					inputSubmix1 = -1
-					processor = -1
-					inputValue0 = 18
-					inputValue1 = -1
-				},
-				{
-					command = "submix.meter"
-					paramName = 0
-					outputSubmix = -1
-					inputSubmix0 = 0
-					inputSubmix1 = -1
-					processor = -1
-					inputValue0 = 14
+					inputValue0 = 15
 					inputValue1 = -1
 				},
 				{
 					command = "submix.debug"
-					paramName = 1132046981
+					paramName = -1485038758
 					outputSubmix = -1
-					inputSubmix0 = 0
+					inputSubmix0 = 7
 					inputSubmix1 = -1
 					processor = -1
 					inputValue0 = -1
-					inputValue1 = -1
-				},
-				{
-					command = "submix.accumulate_single"
-					paramName = 0
-					outputSubmix = 7
-					inputSubmix0 = 8
-					inputSubmix1 = -1
-					processor = -1
-					inputValue0 = 20
 					inputValue1 = -1
 				},
 				{
@@ -1602,33 +1799,23 @@
 					inputValue1 = -1
 				},
 				{
-					command = "submix.debug"
-					paramName = -1977945720
-					outputSubmix = -1
-					inputSubmix0 = 7
-					inputSubmix1 = -1
-					processor = -1
-					inputValue0 = -1
-					inputValue1 = -1
-				},
-				{
 					command = "submix.copy"
 					paramName = 0
 					outputSubmix = 0
 					inputSubmix0 = 0
 					inputSubmix1 = -1
 					processor = -1
-					inputValue0 = 21
+					inputValue0 = 18
 					inputValue1 = -1
 				},
 				{
 					command = "submix.accumulate_single"
 					paramName = 0
 					outputSubmix = 0
-					inputSubmix0 = 7
+					inputSubmix0 = 4
 					inputSubmix1 = -1
 					processor = -1
-					inputValue0 = 22
+					inputValue0 = 19
 					inputValue1 = -1
 				},
 				{
@@ -1643,7 +1830,7 @@
 				},
 				{
 					command = "submix.debug"
-					paramName = 1829265841
+					paramName = 1132046981
 					outputSubmix = -1
 					inputSubmix0 = 0
 					inputSubmix1 = -1
@@ -1652,10 +1839,120 @@
 					inputValue1 = -1
 				},
 				{
-					command = "submix.output"
+					command = "submix.copy"
+					paramName = 0
+					outputSubmix = 10
+					inputSubmix0 = 7
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = 20
+					inputValue1 = -1
+				},
+				{
+					command = "submix.copy"
+					paramName = 0
+					outputSubmix = 7
+					inputSubmix0 = 7
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = 21
+					inputValue1 = -1
+				},
+				{
+					command = "submix.debug"
+					paramName = -612362243
+					outputSubmix = -1
+					inputSubmix0 = 7
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = -1
+					inputValue1 = -1
+				},
+				{
+					command = "submix.meter"
 					paramName = 0
 					outputSubmix = -1
+					inputSubmix0 = 7
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = 17
+					inputValue1 = -1
+				},
+				{
+					command = "submix.generate.sidechain"
+					paramName = 0
+					outputSubmix = 7
+					inputSubmix0 = 7
+					inputSubmix1 = -1
+					processor = 1
+					inputValue0 = -1
+					inputValue1 = -1
+				},
+				{
+					command = "submix.process"
+					paramName = -1110160523
+					outputSubmix = 0
 					inputSubmix0 = 0
+					inputSubmix1 = -1
+					processor = 1
+					inputValue0 = -1
+					inputValue1 = -1
+				},
+				{
+					command = "submix.debug"
+					paramName = -1118809494
+					outputSubmix = -1
+					inputSubmix0 = 0
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = -1
+					inputValue1 = -1
+				},
+				{
+					command = "submix.spectrum"
+					paramName = -1377234872
+					outputSubmix = -1
+					inputSubmix0 = 0
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = -1
+					inputValue1 = -1
+				},
+				{
+					command = "submix.process"
+					paramName = 1715418103
+					outputSubmix = 0
+					inputSubmix0 = 0
+					inputSubmix1 = -1
+					processor = 2
+					inputValue0 = -1
+					inputValue1 = -1
+				},
+				{
+					command = "submix.debug"
+					paramName = 1963407755
+					outputSubmix = -1
+					inputSubmix0 = 0
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = -1
+					inputValue1 = -1
+				},
+				{
+					command = "submix.spectrum"
+					paramName = 1963407755
+					outputSubmix = -1
+					inputSubmix0 = 0
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = -1
+					inputValue1 = -1
+				},
+				{
+					command = "submix.accumulate_single"
+					paramName = 0
+					outputSubmix = 8
+					inputSubmix0 = 9
 					inputSubmix1 = -1
 					processor = -1
 					inputValue0 = 23
@@ -1665,10 +1962,120 @@
 					command = "submix.meter"
 					paramName = 0
 					outputSubmix = -1
+					inputSubmix0 = 8
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = 18
+					inputValue1 = -1
+				},
+				{
+					command = "submix.debug"
+					paramName = -1977945720
+					outputSubmix = -1
+					inputSubmix0 = 8
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = -1
+					inputValue1 = -1
+				},
+				{
+					command = "submix.copy"
+					paramName = 0
+					outputSubmix = 0
 					inputSubmix0 = 0
 					inputSubmix1 = -1
 					processor = -1
-					inputValue0 = 17
+					inputValue0 = 24
+					inputValue1 = -1
+				},
+				{
+					command = "submix.accumulate_single"
+					paramName = 0
+					outputSubmix = 0
+					inputSubmix0 = 8
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = 25
+					inputValue1 = -1
+				},
+				{
+					command = "submix.accumulate_single"
+					paramName = 0
+					outputSubmix = 0
+					inputSubmix0 = 10
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = 26
+					inputValue1 = -1
+				},
+				{
+					command = "submix.meter"
+					paramName = 0
+					outputSubmix = -1
+					inputSubmix0 = 0
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = 19
+					inputValue1 = -1
+				},
+				{
+					command = "submix.debug"
+					paramName = 1829265841
+					outputSubmix = -1
+					inputSubmix0 = 0
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = -1
+					inputValue1 = -1
+				},
+				{
+					command = "submix.copy"
+					paramName = 0
+					outputSubmix = 0
+					inputSubmix0 = 0
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = 27
+					inputValue1 = -1
+				},
+				{
+					command = "submix.debug"
+					paramName = -921523456
+					outputSubmix = -1
+					inputSubmix0 = 0
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = -1
+					inputValue1 = -1
+				},
+				{
+					command = "submix.meter"
+					paramName = 0
+					outputSubmix = -1
+					inputSubmix0 = 0
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = 20
+					inputValue1 = -1
+				},
+				{
+					command = "submix.output"
+					paramName = 0
+					outputSubmix = -1
+					inputSubmix0 = 0
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = 28
+					inputValue1 = -1
+				},
+				{
+					command = "submix.meter"
+					paramName = 0
+					outputSubmix = -1
+					inputSubmix0 = 0
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = 21
 					inputValue1 = -1
 				},
 			]
@@ -1677,9 +2084,11 @@
 				1.0, 0.0, 0.0, 1.0,
 				0.0, 1.0, 0.0, 1.0,
 				1.0, 0.0, 0.0, 1.0,
-				1.0, 1.0, 1.0, 1.004327,
-				0.619263, 1.004327, 1.004327, 1.0,
-				1.0, 0.974429, 1.004327, 1.0,
+				1.004327, 1.0, 1.678804, 0.0,
+				1.004327, 0.619263, 1.487647, 0.974429,
+				1.0, 1.0, 1.0, 1.0,
+				0.917276, 0.0, 0.0, 1.004327,
+				1.0,
 			]
 			m_audioMeters = 
 			[
@@ -1705,6 +2114,9 @@
 					name = "hats"
 				},
 				{
+					name = "kick"
+				},
+				{
 					name = "clap"
 				},
 				{
@@ -1726,13 +2138,22 @@
 					name = "Arps Volume"
 				},
 				{
+					name = "audio.Amp1"
+				},
+				{
 					name = "ducking"
+				},
+				{
+					name = "audio.Splitter2"
 				},
 				{
 					name = "percussion"
 				},
 				{
 					name = "Final Mixer"
+				},
+				{
+					name = "audio.Amp2"
 				},
 				{
 					name = "audio.Output1"
@@ -1769,6 +2190,10 @@
 					value = 1
 				},
 				{
+					name = "audio.Mix8/volume1"
+					value = 12
+				},
+				{
 					name = "audio.Mix8/volume2"
 					value = 13
 				},
@@ -1777,32 +2202,48 @@
 					value = 14
 				},
 				{
-					name = "audio.Mix5/volume1"
+					name = "control.Input1/value"
 					value = 15
 				},
 				{
-					name = "audio.Mix5/volume2"
+					name = "audio.Mix5/volume1"
 					value = 16
 				},
 				{
-					name = "audio.Mix1/volume1"
+					name = "audio.Mix5/volume2"
 					value = 17
 				},
 				{
-					name = "audio.Mix1/volume2"
+					name = "audio.Amp1/volume"
+					value = 15
+				},
+				{
+					name = "audio.Mix1/volume1"
 					value = 18
 				},
 				{
+					name = "audio.Mix1/volume2"
+					value = 19
+				},
+				{
 					name = "audio.Mix7/volume2"
-					value = 20
+					value = 23
 				},
 				{
 					name = "audio.Mix3/volume1"
-					value = 21
+					value = 24
 				},
 				{
 					name = "audio.Mix3/volume2"
-					value = 22
+					value = 25
+				},
+				{
+					name = "audio.Mix3/volume3"
+					value = 26
+				},
+				{
+					name = "audio.Amp2/volume"
+					value = 27
 				},
 			]
 			m_EditorPreview = 
