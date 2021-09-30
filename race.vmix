@@ -9,7 +9,7 @@
 			Name = "main"
 			m_nNodesCreated = 
 			[
-				0, 0, 1, 1,
+				0, 0, 1, 3,
 				0, 0, 1, 0,
 				0, 0, 0, 0,
 				0, 0, 0, 0,
@@ -76,6 +76,46 @@
 						m_sendTo = ""
 					}
 				},
+				{
+					name = "audio.Track2"
+					friendlyname = "BGM"
+					type = "audio.Track"
+					editor_pos = [ 168.0, 240.0 ]
+					editor_size = [ 140.0, 75.0 ]
+					properties = 
+					{
+						_class = "CMixSubmixTrack"
+						m_Comment = ""
+						m_trackName = "BGM"
+						m_nChannels = -1
+						m_nMixDownRule = 0
+						m_sendOperator = "SendAllVoices"
+						m_Send1 = ""
+						m_Send2 = ""
+						m_Send3 = ""
+						m_Send4 = ""
+					}
+				},
+				{
+					name = "audio.Track3"
+					friendlyname = "AltBGM"
+					type = "audio.Track"
+					editor_pos = [ 168.0, 320.0 ]
+					editor_size = [ 140.0, 75.0 ]
+					properties = 
+					{
+						_class = "CMixSubmixTrack"
+						m_Comment = ""
+						m_trackName = "AltBGM"
+						m_nChannels = -1
+						m_nMixDownRule = 0
+						m_sendOperator = "SendVoiceWithNamedSend"
+						m_Send1 = "slow"
+						m_Send2 = ""
+						m_Send3 = ""
+						m_Send4 = ""
+					}
+				},
 			]
 			m_EditorEdges = 
 			[
@@ -87,22 +127,30 @@
 					plug0 = "audio.Mix1/audio:Out"
 					plug1 = "audio.Output1/audio:In1"
 				},
+				{
+					plug0 = "audio.Track3/audio:Source"
+					plug1 = "audio.Mix1/audio:In3"
+				},
+				{
+					plug0 = "audio.Track2/audio:Source"
+					plug1 = "audio.Mix1/audio:In2"
+				},
 			]
 			m_EditorState = 
 			{
 				XAxis = 
 				{
 					pos = 0.0
-					min = -100046.0
-					max = 98791.0
-					scale = 1.0
+					min = -124422.0
+					max = 123266.0
+					scale = 1.244256
 				}
 				YAxis = 
 				{
 					pos = 0.0
-					min = -99967.0
-					max = 99454.0
-					scale = 1.0
+					min = -124483.0
+					max = 123789.0
+					scale = 1.244256
 				}
 			}
 			m_Submixes = 
@@ -111,6 +159,21 @@
 					name = "Main"
 					sendOperator = "SendAllVoices"
 					soloname = 4275089042
+					channels = -1
+					mixDownRule = 0
+				},
+				{
+					name = "BGM"
+					sendOperator = "SendAllVoices"
+					soloname = 54958013
+					channels = -1
+					mixDownRule = 0
+				},
+				{
+					name = "AltBGM"
+					sendOperator = "SendVoiceWithNamedSend"
+					send0 = "slow"
+					soloname = 2258390383
 					channels = -1
 					mixDownRule = 0
 				},
@@ -138,13 +201,73 @@
 					inputValue1 = -1
 				},
 				{
+					command = "submix.debug"
+					paramName = 54958013
+					outputSubmix = -1
+					inputSubmix0 = 1
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = -1
+					inputValue1 = -1
+				},
+				{
+					command = "submix.meter"
+					paramName = 0
+					outputSubmix = -1
+					inputSubmix0 = 1
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = 1
+					inputValue1 = -1
+				},
+				{
+					command = "submix.debug"
+					paramName = -2036576913
+					outputSubmix = -1
+					inputSubmix0 = 2
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = -1
+					inputValue1 = -1
+				},
+				{
+					command = "submix.meter"
+					paramName = 0
+					outputSubmix = -1
+					inputSubmix0 = 2
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = 2
+					inputValue1 = -1
+				},
+				{
+					command = "submix.accumulate_single"
+					paramName = 0
+					outputSubmix = 0
+					inputSubmix0 = 1
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = 1
+					inputValue1 = -1
+				},
+				{
+					command = "submix.accumulate_single"
+					paramName = 0
+					outputSubmix = 0
+					inputSubmix0 = 2
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = 2
+					inputValue1 = -1
+				},
+				{
 					command = "submix.meter"
 					paramName = 0
 					outputSubmix = -1
 					inputSubmix0 = 0
 					inputSubmix1 = -1
 					processor = -1
-					inputValue0 = 1
+					inputValue0 = 3
 					inputValue1 = -1
 				},
 				{
@@ -164,7 +287,7 @@
 					inputSubmix0 = 0
 					inputSubmix1 = -1
 					processor = -1
-					inputValue0 = 1
+					inputValue0 = 3
 					inputValue1 = -1
 				},
 				{
@@ -174,21 +297,38 @@
 					inputSubmix0 = 0
 					inputSubmix1 = -1
 					processor = -1
-					inputValue0 = 2
+					inputValue0 = 4
 					inputValue1 = -1
 				},
 			]
-			m_values = [ 1.0, 1.0 ]
+			m_values = [ 1.0, 1.0, 1.0, 1.0 ]
 			m_audioMeters = 
 			[
 				{
 					name = "Main"
 				},
 				{
+					name = "BGM"
+				},
+				{
+					name = "AltBGM"
+				},
+				{
 					name = "audio.Mix1"
 				},
 				{
 					name = "audio.Output1"
+				},
+			]
+			m_controlMeters = 
+			[
+				{
+					name = "audio.Mix1/volume2"
+					value = 1
+				},
+				{
+					name = "audio.Mix1/volume3"
+					value = 2
 				},
 			]
 		},
@@ -198,7 +338,7 @@
 			m_nNodesCreated = 
 			[
 				0, 0, 0, 9,
-				0, 0, 0, 0,
+				5, 0, 1, 0,
 				0, 0, 0, 0,
 				0, 0, 0, 0,
 				0, 0, 0, 0,
@@ -342,22 +482,123 @@
 						m_nMixDownRule = 0
 					}
 				},
+				{
+					name = "audio.Output1"
+					friendlyname = "audio.Output1"
+					type = "audio.Output"
+					editor_pos = [ 1888.0, 480.0 ]
+					editor_size = [ 140.0, 120.0 ]
+					properties = 
+					{
+						_class = "CMixOutput"
+						m_Comment = ""
+						m_name = "audio.Output1"
+						m_flVolume1 = 1.0
+						m_flVolume2 = 1.0
+						m_sendTo = "BGM"
+					}
+				},
+				{
+					name = "control.Input1"
+					friendlyname = "KickMute"
+					type = "control.Input"
+					editor_pos = [ -368.0, 392.0 ]
+					editor_size = [ 140.0, 70.0 ]
+					properties = 
+					{
+						_class = "CMixControlInput"
+						m_Comment = ""
+						m_name = "KickMute"
+						m_flDefaultValue = 1.0
+						m_flMinRange = 0.0
+						m_flMaxRange = 1.0
+						m_bUseDecibels = false
+					}
+				},
+				{
+					name = "control.Input2"
+					friendlyname = "Muffle"
+					type = "control.Input"
+					editor_pos = [ -368.0, 472.0 ]
+					editor_size = [ 140.0, 70.0 ]
+					properties = 
+					{
+						_class = "CMixControlInput"
+						m_Comment = ""
+						m_name = "Muffle"
+						m_flDefaultValue = 1.0
+						m_flMinRange = 0.0
+						m_flMaxRange = 1.0
+						m_bUseDecibels = false
+					}
+				},
+				{
+					name = "control.Input3"
+					friendlyname = "RideVol"
+					type = "control.Input"
+					editor_pos = [ -368.0, 552.0 ]
+					editor_size = [ 140.0, 70.0 ]
+					properties = 
+					{
+						_class = "CMixControlInput"
+						m_Comment = ""
+						m_name = "RideVol"
+						m_flDefaultValue = 1.0
+						m_flMinRange = 0.0
+						m_flMaxRange = 1.0
+						m_bUseDecibels = false
+					}
+				},
+				{
+					name = "control.Input4"
+					friendlyname = "ClapVol"
+					type = "control.Input"
+					editor_pos = [ -368.0, 632.0 ]
+					editor_size = [ 140.0, 70.0 ]
+					properties = 
+					{
+						_class = "CMixControlInput"
+						m_Comment = ""
+						m_name = "ClapVol"
+						m_flDefaultValue = 1.0
+						m_flMinRange = 0.0
+						m_flMaxRange = 1.0
+						m_bUseDecibels = false
+					}
+				},
+				{
+					name = "control.Input5"
+					friendlyname = "ChordsVol"
+					type = "control.Input"
+					editor_pos = [ -368.0, 704.0 ]
+					editor_size = [ 140.0, 70.0 ]
+					properties = 
+					{
+						_class = "CMixControlInput"
+						m_Comment = ""
+						m_name = "ChordsVol"
+						m_flDefaultValue = 1.0
+						m_flMinRange = 0.0
+						m_flMaxRange = 1.0
+						m_bUseDecibels = false
+					}
+				},
 			]
 			m_EditorState = 
 			{
 				XAxis = 
 				{
 					pos = 0.0
-					min = -64187.0
-					max = 63436.0
-					scale = 0.644001
+					min = -111188.0
+					max = 109800.0
+					scale = 1.110758
 				}
 				YAxis = 
 				{
 					pos = 0.0
-					min = -64458.0
-					max = 63741.0
-					scale = 0.644001
+					min = -111287.0
+					max = 110285.0
+					scale = 1.110758
 				}
 			}
 			m_EditorPreview = 
@@ -367,48 +608,53 @@
 				voiceList = 
 				[
 					{
-						sound = "sounds/bass.vsnd"
+						sound = "sounds/bgm/bass.vsnd"
 						track = "bass"
 						isEvent = false
 					},
 					{
-						sound = "sounds/bcarp_hico.vsnd"
+						sound = "sounds/bgm/bcarp_hico.vsnd"
 						track = "bcArp_HiCo"
 						isEvent = false
 					},
 					{
-						sound = "sounds/bcarp_loco.vsnd"
+						sound = "sounds/bgm/bcarp_loco.vsnd"
 						track = "bcArp_LoCo"
 						isEvent = false
 					},
 					{
-						sound = "sounds/chords.vsnd"
+						sound = "sounds/bgm/chords.vsnd"
 						track = "chords"
 						isEvent = false
 					},
 					{
-						sound = "sounds/clap.vsnd"
+						sound = "sounds/bgm/clap.vsnd"
 						track = "clap"
 						isEvent = false
 					},
 					{
-						sound = "sounds/hats.vsnd"
+						sound = "sounds/bgm/hats.vsnd"
 						track = "hats"
 						isEvent = false
 					},
 					{
-						sound = "sounds/kick.vsnd"
+						sound = "sounds/bgm/kick.vsnd"
 						track = "kick"
 						isEvent = false
 					},
 					{
-						sound = "sounds/syncarp_hico.vsnd"
+						sound = "sounds/bgm/ride.vsnd"
 						track = "syncArp_HiCo"
 						isEvent = false
 					},
 					{
-						sound = "sounds/syncarp_loco.vsnd"
+						sound = "sounds/bgm/syncarp_hico.vsnd"
 						track = "syncArp_LoCo"
+						isEvent = false
+					},
+					{
+						sound = "sounds/bgm/syncarp_loco.vsnd"
+						track = "bass"
 						isEvent = false
 					},
 				]
@@ -420,8 +666,8 @@
 			m_nNodesCreated = 
 			[
 				0, 0, 3, 5,
-				3, 0, 1, 0,
-				1, 2, 0, 0,
+				3, 0, 2, 0,
+				1, 2, 0, 1,
 				0, 0, 0, 0,
 				0, 4, 0, 0,
 				0, 0, 0, 0,
@@ -506,15 +752,15 @@
 				},
 				{
 					name = "audio.Output1"
-					friendlyname = "audio.Output1"
+					friendlyname = "Final Output"
 					type = "audio.Output"
-					editor_pos = [ 1496.0, -14.0 ]
+					editor_pos = [ 1712.0, -16.0 ]
 					editor_size = [ 140.0, 120.0 ]
 					properties = 
 					{
 						_class = "CMixOutput"
 						m_Comment = ""
-						m_name = "audio.Output1"
+						m_name = "Final Output"
 						m_flVolume1 = 1.0
 						m_flVolume2 = 1.0
 						m_sendTo = ""
@@ -780,6 +1026,37 @@
 						m_bMovesNodes = true
 					}
 				},
+				{
+					name = "audio.Output2"
+					friendlyname = "audio.Output2"
+					type = "audio.Output"
+					editor_pos = [ 1720.0, 112.0 ]
+					editor_size = [ 140.0, 120.0 ]
+					properties = 
+					{
+						_class = "CMixOutput"
+						m_Comment = ""
+						m_name = "audio.Output2"
+						m_flVolume1 = 1.0
+						m_flVolume2 = 1.0
+						m_sendTo = "AltBGM"
+					}
+				},
+				{
+					name = "audio.Splitter1"
+					friendlyname = "audio.Splitter1"
+					type = "audio.Splitter"
+					editor_pos = [ 1512.0, -16.0 ]
+					editor_size = [ 140.0, 105.0 ]
+					properties = 
+					{
+						_class = "CMixSplitter"
+						m_Comment = ""
+						m_name = "audio.Splitter1"
+						m_flVolume1 = 1.0
+						m_flVolume2 = 1.0
+					}
+				},
 			]
 			m_EditorEdges = 
 			[
@@ -840,8 +1117,8 @@
 					plug1 = "control.Crossfade1/valueIn"
 				},
 				{
-					plug0 = "audio.Amp4/audio:Out"
-					plug1 = "audio.Output1/audio:In1"
+					plug0 = "audio.Amp1/audio:Out"
+					plug1 = "audio.Mix2/audio:In1"
 				},
 				{
 					plug0 = "control.Input1/value"
@@ -864,8 +1141,16 @@
 					plug1 = "audio.Mix2/audio:In2"
 				},
 				{
-					plug0 = "audio.Amp1/audio:Out"
-					plug1 = "audio.Mix2/audio:In1"
+					plug0 = "audio.Amp4/audio:Out"
+					plug1 = "audio.Splitter1/audio:In"
+				},
+				{
+					plug0 = "audio.Splitter1/audio:Out1"
+					plug1 = "audio.Output1/audio:In1"
+				},
+				{
+					plug0 = "audio.Splitter1/audio.Out2"
+					plug1 = "audio.Output2/audio:In1"
 				},
 			]
 			m_EditorState = 
@@ -873,16 +1158,16 @@
 				XAxis = 
 				{
 					pos = 0.0
-					min = -49117.0
-					max = 48478.0
-					scale = 0.493791
+					min = -50246.0
+					max = 49119.0
+					scale = 0.502642
 				}
 				YAxis = 
 				{
 					pos = 0.0
-					min = -49136.0
-					max = 49043.0
-					scale = 0.493791
+					min = -49945.0
+					max = 50005.0
+					scale = 0.502642
 				}
 			}
 			m_Submixes = 
@@ -919,6 +1204,13 @@
 					name = "kick"
 					sendOperator = ""
 					soloname = 2258390383
+					channels = -1
+					mixDownRule = 0
+				},
+				{
+					name = "audio.Splitter1"
+					sendOperator = "SendNone"
+					soloname = 2385401952
 					channels = -1
 					mixDownRule = 0
 				},
@@ -1401,13 +1693,33 @@
 					inputValue1 = -1
 				},
 				{
-					command = "submix.output"
+					command = "submix.copy"
 					paramName = 0
-					outputSubmix = -1
+					outputSubmix = 5
 					inputSubmix0 = 0
 					inputSubmix1 = -1
 					processor = -1
 					inputValue0 = 27
+					inputValue1 = -1
+				},
+				{
+					command = "submix.copy"
+					paramName = 0
+					outputSubmix = 0
+					inputSubmix0 = 0
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = 28
+					inputValue1 = -1
+				},
+				{
+					command = "submix.debug"
+					paramName = -717401423
+					outputSubmix = -1
+					inputSubmix0 = 0
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = -1
 					inputValue1 = -1
 				},
 				{
@@ -1420,6 +1732,46 @@
 					inputValue0 = 12
 					inputValue1 = -1
 				},
+				{
+					command = "submix.output"
+					paramName = 0
+					outputSubmix = 1
+					inputSubmix0 = 5
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = 29
+					inputValue1 = -1
+				},
+				{
+					command = "submix.meter"
+					paramName = 0
+					outputSubmix = -1
+					inputSubmix0 = 5
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = 13
+					inputValue1 = -1
+				},
+				{
+					command = "submix.output"
+					paramName = 0
+					outputSubmix = -1
+					inputSubmix0 = 0
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = 30
+					inputValue1 = -1
+				},
+				{
+					command = "submix.meter"
+					paramName = 0
+					outputSubmix = -1
+					inputSubmix0 = 0
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = 14
+					inputValue1 = -1
+				},
 			]
 			m_values = 
 			[
@@ -1430,6 +1782,7 @@
 				0.0, 1.0, 1.0, 0.0,
 				0.0, 1.0, 1.0, 1.004327,
 				1.004327, 1.0, 1.004327, 1.0,
+				1.0, 1.0, 1.0,
 			]
 			m_audioMeters = 
 			[
@@ -1470,7 +1823,13 @@
 					name = "Final Volume Control"
 				},
 				{
-					name = "audio.Output1"
+					name = "audio.Splitter1"
+				},
+				{
+					name = "audio.Output2"
+				},
+				{
+					name = "Final Output"
 				},
 			]
 			m_controlMeters = 
@@ -1548,6 +1907,12 @@
 					value = 26
 				},
 			]
+			m_additionalOutputs = 
+			[
+				{
+					name = "AltBGM"
+				},
+			]
 			m_EditorPreview = 
 			{
 				volume = 1.0
@@ -1585,6 +1950,6 @@
 	]
 	Editor = 
 	{
-		SelectedGraph = 2
+		SelectedGraph = 0
 	}
 }
