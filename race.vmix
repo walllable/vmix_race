@@ -1,7 +1,72 @@
 <!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
 {
-	dsp_presets = [  ]
-	dsp_preview = null
+	dsp_presets = 
+	[
+		{
+			Name = "bcArp Reverb FX"
+			index = -1
+			type = 1
+			mix_min = 0.2
+			mix_max = 0.7
+			duration = 0.0
+			fade = 0.0
+			db_min = 80.0
+			db_mixdrop = 0.5
+			processors = 
+			[
+				{
+					type = 2
+					params = 
+					[
+						90.0, 20.0, 10.647, 0.96,
+						1.31869, 0.0, 1.0, 6.75,
+						3.48, 270.0, 262.0, 262.0,
+						0.26, 0.26, 0.26, 0.0,
+					]
+				},
+			]
+		},
+		{
+			Name = "(Copy)core.auto.template.reverb0"
+			index = -1
+			type = 1
+			mix_min = 0.2
+			mix_max = 0.7
+			duration = 0.0
+			fade = 0.0
+			db_min = 80.0
+			db_mixdrop = 0.5
+			processors = 
+			[
+				{
+					type = 2
+					params = 
+					[
+						196.0, 26.0, 4.0, 0.9,
+						1.4, 4000.0, 1.0, 0.0,
+						0.0, 0.0, 0.0, 0.0,
+						0.0, 0.0, 0.0, 0.308025,
+					]
+				},
+			]
+		},
+	]
+	dsp_preview = 
+	{
+		m_EditorPreview = 
+		{
+			volume = 1.0
+			mix = 1.0
+			voiceList = 
+			[
+				{
+					sound = "sounds/bgm/bcarp_loco.vsnd"
+					track = ""
+					isEvent = false
+				},
+			]
+		}
+	}
 	Graphs = 
 	[
 		{
@@ -337,9 +402,9 @@
 			Name = "bgm"
 			m_nNodesCreated = 
 			[
-				0, 0, 6, 10,
-				5, 0, 1, 0,
-				0, 1, 0, 0,
+				1, 0, 6, 10,
+				6, 0, 1, 0,
+				0, 1, 0, 1,
 				0, 0, 0, 0,
 				0, 0, 0, 0,
 				0, 0, 0, 0,
@@ -366,7 +431,7 @@
 					name = "audio.Track2"
 					friendlyname = "bcArp_HiCo"
 					type = "audio.Track"
-					editor_pos = [ 360.0, -192.0 ]
+					editor_pos = [ 224.0, -728.0 ]
 					editor_size = [ 140.0, 75.0 ]
 					properties = 
 					{
@@ -381,7 +446,7 @@
 					name = "audio.Track3"
 					friendlyname = "bcArp_LoCo"
 					type = "audio.Track"
-					editor_pos = [ 360.0, -112.0 ]
+					editor_pos = [ 224.0, -648.0 ]
 					editor_size = [ 140.0, 75.0 ]
 					properties = 
 					{
@@ -456,7 +521,7 @@
 					name = "audio.Track8"
 					friendlyname = "syncArp_HiCo"
 					type = "audio.Track"
-					editor_pos = [ 360.0, 104.0 ]
+					editor_pos = [ 224.0, -432.0 ]
 					editor_size = [ 140.0, 75.0 ]
 					properties = 
 					{
@@ -471,7 +536,7 @@
 					name = "audio.Track9"
 					friendlyname = "syncArp_LoCo"
 					type = "audio.Track"
-					editor_pos = [ 360.0, 184.0 ]
+					editor_pos = [ 224.0, -352.0 ]
 					editor_size = [ 140.0, 75.0 ]
 					properties = 
 					{
@@ -587,7 +652,7 @@
 					name = "audio.Mix1"
 					friendlyname = "ducking"
 					type = "audio.Mix"
-					editor_pos = [ 1312.0, 272.0 ]
+					editor_pos = [ 1488.0, 320.0 ]
 					editor_size = [ 140.0, 300.0 ]
 					properties = 
 					{
@@ -608,7 +673,7 @@
 					name = "audio.Mix2"
 					friendlyname = "bcArp Cutoff Crossfade"
 					type = "audio.Mix"
-					editor_pos = [ 736.0, -248.0 ]
+					editor_pos = [ 600.0, -784.0 ]
 					editor_size = [ 140.0, 300.0 ]
 					properties = 
 					{
@@ -629,7 +694,7 @@
 					name = "control.Crossfade1"
 					friendlyname = "bcArp Muffle Crossfade"
 					type = "control.Crossfade"
-					editor_pos = [ 352.0, -16.0 ]
+					editor_pos = [ 216.0, -552.0 ]
 					editor_size = [ 162.0, 100.0 ]
 					properties = 
 					{
@@ -701,16 +766,16 @@
 					name = "audio.Mix5"
 					friendlyname = "Arps Volume"
 					type = "audio.Mix"
-					editor_pos = [ 1088.0, 112.0 ]
+					editor_pos = [ 1112.0, -440.0 ]
 					editor_size = [ 140.0, 300.0 ]
 					properties = 
 					{
 						_class = "CMixSum"
-						m_Comment = "track 1 bcArp, track 2 syncArp"
+						m_Comment = "track 1 bcArp, track 2 syncArp, track 3 bcArp reverb"
 						m_name = "Arps Volume"
-						m_flVolume1 = 1.133379
-						m_flVolume2 = 0.0
-						m_flVolume3 = 1.0
+						m_flVolume1 = 1.004327
+						m_flVolume2 = 0.619263
+						m_flVolume3 = 1.004327
 						m_flVolume4 = 1.0
 						m_flVolume5 = 1.0
 						m_flVolume6 = 1.0
@@ -722,7 +787,7 @@
 					name = "audio.Mix6"
 					friendlyname = "syncArp Cutoff Crossfade"
 					type = "audio.Mix"
-					editor_pos = [ 736.0, 64.0 ]
+					editor_pos = [ 600.0, -472.0 ]
 					editor_size = [ 140.0, 300.0 ]
 					properties = 
 					{
@@ -737,6 +802,37 @@
 						m_flVolume6 = 1.0
 						m_flVolume7 = 1.0
 						m_flVolume8 = 1.0
+					}
+				},
+				{
+					name = "audio.Processor1"
+					friendlyname = "bcArp Reverb (unused)"
+					type = "audio.Processor"
+					editor_pos = [ 872.0, -328.0 ]
+					editor_size = [ 140.0, 120.0 ]
+					properties = 
+					{
+						_class = "CMixPresetDSP"
+						m_Comment = "unused because I can\'t use custom presets on graphs other than the main one"
+						m_name = "bcArp Reverb (unused)"
+						m_nChannels = -1
+						m_effectName = "(Copy)core.auto.template.reverb0"
+						m_flXFade = 0.1
+					}
+				},
+				{
+					name = "audio.Splitter1"
+					friendlyname = "bcArp Splitter*"
+					type = "audio.Splitter"
+					editor_pos = [ 768.0, -568.0 ]
+					editor_size = [ 140.0, 105.0 ]
+					properties = 
+					{
+						_class = "CMixSplitter"
+						m_Comment = "splits between dry signal (track 1) and wet-only Reverb (track 3)"
+						m_name = "bcArp Splitter*"
+						m_flVolume1 = 1.0
+						m_flVolume2 = 1.0
 					}
 				},
 			]
@@ -767,8 +863,8 @@
 					plug1 = "audio.Mix3/audio:In1"
 				},
 				{
-					plug0 = "audio.Mix2/audio:Out"
-					plug1 = "audio.Mix5/audio:In1"
+					plug0 = "audio.Mix3/audio:Out"
+					plug1 = "audio.Output1/audio:In1"
 				},
 				{
 					plug0 = "audio.Track8/audio:Source"
@@ -795,8 +891,12 @@
 					plug1 = "audio.Mix1/audio:In1"
 				},
 				{
-					plug0 = "audio.Mix3/audio:Out"
-					plug1 = "audio.Output1/audio:In1"
+					plug0 = "audio.Mix2/audio:Out"
+					plug1 = "audio.Splitter1/audio:In"
+				},
+				{
+					plug0 = "audio.Splitter1/audio:Out1"
+					plug1 = "audio.Mix5/audio:In1"
 				},
 			]
 			m_EditorState = 
@@ -804,16 +904,16 @@
 				XAxis = 
 				{
 					pos = 0.0
-					min = -56098.0
-					max = 55197.0
-					scale = 0.562287
+					min = -78581.0
+					max = 76782.0
+					scale = 0.782692
 				}
 				YAxis = 
 				{
 					pos = 0.0
-					min = -56029.0
-					max = 55850.0
-					scale = 0.562287
+					min = -77867.0
+					max = 78093.0
+					scale = 0.782692
 				}
 			}
 			m_Submixes = 
@@ -1029,6 +1129,36 @@
 				{
 					command = "submix.copy"
 					paramName = 0
+					outputSubmix = 0
+					inputSubmix0 = 0
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = 11
+					inputValue1 = -1
+				},
+				{
+					command = "submix.debug"
+					paramName = -717401423
+					outputSubmix = -1
+					inputSubmix0 = 0
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = -1
+					inputValue1 = -1
+				},
+				{
+					command = "submix.meter"
+					paramName = 0
+					outputSubmix = -1
+					inputSubmix0 = 0
+					inputSubmix1 = -1
+					processor = -1
+					inputValue0 = 5
+					inputValue1 = -1
+				},
+				{
+					command = "submix.copy"
+					paramName = 0
 					outputSubmix = 2
 					inputSubmix0 = 2
 					inputSubmix1 = -1
@@ -1053,7 +1183,7 @@
 					inputSubmix0 = 2
 					inputSubmix1 = -1
 					processor = -1
-					inputValue0 = 5
+					inputValue0 = 6
 					inputValue1 = -1
 				},
 				{
@@ -1073,7 +1203,7 @@
 					inputSubmix0 = 0
 					inputSubmix1 = -1
 					processor = -1
-					inputValue0 = 11
+					inputValue0 = 12
 					inputValue1 = -1
 				},
 				{
@@ -1083,7 +1213,7 @@
 					inputSubmix0 = 2
 					inputSubmix1 = -1
 					processor = -1
-					inputValue0 = 12
+					inputValue0 = 13
 					inputValue1 = -1
 				},
 				{
@@ -1093,7 +1223,7 @@
 					inputSubmix0 = 0
 					inputSubmix1 = -1
 					processor = -1
-					inputValue0 = 6
+					inputValue0 = 7
 					inputValue1 = -1
 				},
 				{
@@ -1113,7 +1243,7 @@
 					inputSubmix0 = 0
 					inputSubmix1 = -1
 					processor = -1
-					inputValue0 = 7
+					inputValue0 = 8
 					inputValue1 = -1
 				},
 				{
@@ -1133,7 +1263,7 @@
 					inputSubmix0 = 0
 					inputSubmix1 = -1
 					processor = -1
-					inputValue0 = 8
+					inputValue0 = 9
 					inputValue1 = -1
 				},
 				{
@@ -1153,7 +1283,7 @@
 					inputSubmix0 = 0
 					inputSubmix1 = -1
 					processor = -1
-					inputValue0 = 15
+					inputValue0 = 16
 					inputValue1 = -1
 				},
 				{
@@ -1163,7 +1293,7 @@
 					inputSubmix0 = 0
 					inputSubmix1 = -1
 					processor = -1
-					inputValue0 = 9
+					inputValue0 = 10
 					inputValue1 = -1
 				},
 			]
@@ -1171,8 +1301,9 @@
 			[
 				1.0, 0.0, 0.0, 1.0,
 				0.0, 1.0, 0.0, 1.0,
-				1.0, 0.0, 0.0, 1.133379,
-				0.0, 1.0, 1.0, 1.0,
+				1.0, 0.0, 0.0, 1.0,
+				1.004327, 0.619263, 1.0, 1.0,
+				1.0,
 			]
 			m_audioMeters = 
 			[
@@ -1190,6 +1321,9 @@
 				},
 				{
 					name = "bcArp Cutoff Crossfade"
+				},
+				{
+					name = "bcArp Splitter*"
 				},
 				{
 					name = "syncArp Cutoff Crossfade"
@@ -1239,11 +1373,11 @@
 				},
 				{
 					name = "audio.Mix5/volume1"
-					value = 11
+					value = 12
 				},
 				{
 					name = "audio.Mix5/volume2"
-					value = 12
+					value = 13
 				},
 			]
 			m_EditorPreview = 
